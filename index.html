@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="theme-switch-wrapper">
+        <label for="checkbox" class="theme-switch">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <div class="slider round"></div>
+        </label>
+        <small>Cambiar color</small>
+    </div>
+    
+    <section>
+        <div class="heading">
+            <h1>Somos la mejor <b>Agencia Digital</b></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum explicabo iure eos modi debitis est.</p>
+            <a href="#" class="btn-primary">Comienza tu <b>proyecto ahora</b></a>
+        </div>
+    </section>
+
+    <script> 
+        const colorSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchColor( event ) {
+            if( event.target.checked ) {
+                console.log('si');
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+
+        colorSwitch.addEventListener('change',  switchColor, false);
+    </script>
+
+</body>
+</html>
